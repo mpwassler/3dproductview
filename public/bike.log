@@ -1,0 +1,1278 @@
+Exporter version: 5.4.2, Blender version: 2.79 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  false
+		flat shading entire scene:  false
+		inline textures:  false
+		texture directory:  /Users/mitchel/Sites/blogposts/3dproducts/product3d/public/
+	Python World class constructor completed
+	processing begun of mesh:  Ghidon2
+		processing begun of Standard material:  Material__6
+		num positions      :  12685
+		num normals        :  12685
+		num uvs            :  25370
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  15441
+	processing begun of mesh:  ZaExterior09
+		processing begun of Standard material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior13
+		registered as also a user of material:  wire_000000000
+		num positions      :  1910
+		num normals        :  1910
+		num uvs            :  3820
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaInterior50
+		processing begun of Standard material:  wire_196196196
+		num positions      :  2130
+		num normals        :  2130
+		num uvs            :  4260
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaInterior45
+		registered as also a user of material:  wire_196196196
+		num positions      :  2148
+		num normals        :  2148
+		num uvs            :  4296
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  MecPedDr
+		registered as also a user of material:  wire_000000000
+		num positions      :  46
+		num normals        :  46
+		num uvs            :  92
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60
+	processing begun of mesh:  ZaInterior40
+		registered as also a user of material:  wire_196196196
+		num positions      :  2151
+		num normals        :  2151
+		num uvs            :  4302
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior05
+		registered as also a user of material:  wire_000000000
+		num positions      :  1847
+		num normals        :  1847
+		num uvs            :  3694
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2400
+	processing begun of mesh:  SurubJos
+		registered as also a user of material:  wire_196196196
+		num positions      :  247
+		num normals        :  247
+		num uvs            :  494
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  324
+	processing begun of mesh:  ZaExterior01
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  BidonGalben
+		processing begun of Standard material:  wire_220176000
+		num positions      :  2525
+		num normals        :  2525
+		num uvs            :  5050
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3000
+	processing begun of mesh:  ZaInterior19
+		registered as also a user of material:  wire_196196196
+		num positions      :  2178
+		num normals        :  2178
+		num uvs            :  4356
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  SurubSus
+		registered as also a user of material:  wire_196196196
+		num positions      :  533
+		num normals        :  533
+		num uvs            :  1066
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  648
+	processing begun of mesh:  ZaExterior41
+		registered as also a user of material:  wire_000000000
+		num positions      :  1885
+		num normals        :  1885
+		num uvs            :  3770
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  SabotSpateD
+		registered as also a user of material:  wire_000000000
+		num positions      :  1591
+		num normals        :  1591
+		num uvs            :  3182
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1944
+	processing begun of mesh:  ZaInterior41
+		registered as also a user of material:  wire_196196196
+		num positions      :  2165
+		num normals        :  2165
+		num uvs            :  4330
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  ZaInterior12
+		registered as also a user of material:  wire_196196196
+		num positions      :  2154
+		num normals        :  2154
+		num uvs            :  4308
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  Sa
+		registered as also a user of material:  Material__6
+		num positions      :  2606
+		num normals        :  2606
+		num uvs            :  5212
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3027
+	processing begun of mesh:  ZaInterior43
+		registered as also a user of material:  wire_196196196
+		num positions      :  2158
+		num normals        :  2158
+		num uvs            :  4316
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  Cadru1
+		processing begun of Standard material:  wire_131000000
+		num positions      :  10005
+		num normals        :  10005
+		num uvs            :  20010
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  12831
+	processing begun of mesh:  ZaExterior22
+		registered as also a user of material:  wire_000000000
+		num positions      :  1908
+		num normals        :  1908
+		num uvs            :  3816
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  CapacBRosu
+		registered as also a user of material:  wire_000000000
+		num positions      :  1916
+		num normals        :  1916
+		num uvs            :  3832
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2400
+	processing begun of mesh:  CabluPinioaneF
+		registered as also a user of material:  wire_000000000
+		num positions      :  1891
+		num normals        :  1891
+		num uvs            :  3782
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2268
+	processing begun of mesh:  ZaInterior17
+		registered as also a user of material:  wire_196196196
+		num positions      :  2149
+		num normals        :  2149
+		num uvs            :  4298
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior34
+		registered as also a user of material:  wire_196196196
+		num positions      :  2165
+		num normals        :  2165
+		num uvs            :  4330
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  FranaFata
+		registered as also a user of material:  wire_196196196
+		num positions      :  6295
+		num normals        :  6295
+		num uvs            :  12590
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7863
+	processing begun of mesh:  ZaInterior13
+		registered as also a user of material:  wire_196196196
+		num positions      :  2144
+		num normals        :  2144
+		num uvs            :  4288
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaExterior
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaInterior49
+		registered as also a user of material:  wire_196196196
+		num positions      :  2180
+		num normals        :  2180
+		num uvs            :  4360
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaInterior46
+		registered as also a user of material:  wire_196196196
+		num positions      :  2155
+		num normals        :  2155
+		num uvs            :  4310
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior21
+		registered as also a user of material:  wire_196196196
+		num positions      :  2178
+		num normals        :  2178
+		num uvs            :  4356
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior30
+		registered as also a user of material:  wire_000000000
+		num positions      :  1892
+		num normals        :  1892
+		num uvs            :  3784
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  Cadru2
+		registered as also a user of material:  wire_000000000
+		num positions      :  1492
+		num normals        :  1492
+		num uvs            :  2984
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2049
+	processing begun of mesh:  ZaExterior26
+		registered as also a user of material:  wire_000000000
+		num positions      :  1922
+		num normals        :  1922
+		num uvs            :  3844
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  DerailleurSpate
+		registered as also a user of material:  wire_196196196
+		num positions      :  5949
+		num normals        :  5949
+		num uvs            :  11898
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7314
+	processing begun of mesh:  ManetaVitezeSt
+		registered as also a user of material:  wire_000000000
+		num positions      :  348
+		num normals        :  348
+		num uvs            :  696
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  420
+	processing begun of mesh:  ZaInterior28
+		registered as also a user of material:  wire_196196196
+		num positions      :  2157
+		num normals        :  2157
+		num uvs            :  4314
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior17
+		registered as also a user of material:  wire_000000000
+		num positions      :  1889
+		num normals        :  1889
+		num uvs            :  3778
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior28
+		registered as also a user of material:  wire_000000000
+		num positions      :  1892
+		num normals        :  1892
+		num uvs            :  3784
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaExterior44
+		registered as also a user of material:  wire_000000000
+		num positions      :  1916
+		num normals        :  1916
+		num uvs            :  3832
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  CorpManetaDr
+		registered as also a user of material:  wire_000000000
+		num positions      :  1388
+		num normals        :  1388
+		num uvs            :  2776
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1668
+	processing begun of mesh:  ZaInterior06
+		registered as also a user of material:  wire_196196196
+		num positions      :  2140
+		num normals        :  2140
+		num uvs            :  4280
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaInterior36
+		registered as also a user of material:  wire_196196196
+		num positions      :  2152
+		num normals        :  2152
+		num uvs            :  4304
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior38
+		registered as also a user of material:  wire_000000000
+		num positions      :  1902
+		num normals        :  1902
+		num uvs            :  3804
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  CorpManetaSt
+		registered as also a user of material:  wire_000000000
+		num positions      :  1388
+		num normals        :  1388
+		num uvs            :  2776
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1668
+	processing begun of mesh:  Ventil01
+		registered as also a user of material:  wire_000000000
+		num positions      :  349
+		num normals        :  349
+		num uvs            :  698
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  420
+	processing begun of mesh:  ZaInterior04
+		registered as also a user of material:  wire_196196196
+		num positions      :  2154
+		num normals        :  2154
+		num uvs            :  4308
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior10
+		registered as also a user of material:  wire_196196196
+		num positions      :  2151
+		num normals        :  2151
+		num uvs            :  4302
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaExterior27
+		registered as also a user of material:  wire_000000000
+		num positions      :  1889
+		num normals        :  1889
+		num uvs            :  3778
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaInterior15
+		registered as also a user of material:  wire_196196196
+		num positions      :  2153
+		num normals        :  2153
+		num uvs            :  4306
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  SabotFataS
+		registered as also a user of material:  wire_000000000
+		num positions      :  1582
+		num normals        :  1582
+		num uvs            :  3164
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1944
+	processing begun of mesh:  ZaInterior37
+		registered as also a user of material:  wire_196196196
+		num positions      :  2159
+		num normals        :  2159
+		num uvs            :  4318
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2826
+	processing begun of mesh:  Sa1
+		registered as also a user of material:  wire_196196196
+		num positions      :  3048
+		num normals        :  3048
+		num uvs            :  6096
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3798
+	processing begun of mesh:  PneuInteriorSpate
+		processing begun of Standard material:  wire_189155097
+		num positions      :  4692
+		num normals        :  4692
+		num uvs            :  9384
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  5400
+	processing begun of mesh:  RolaLant1
+		registered as also a user of material:  wire_000000000
+		num positions      :  1536
+		num normals        :  1536
+		num uvs            :  3072
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2064
+	processing begun of mesh:  ZaInterior01
+		registered as also a user of material:  wire_196196196
+		num positions      :  2149
+		num normals        :  2149
+		num uvs            :  4298
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaExterior36
+		registered as also a user of material:  wire_000000000
+		num positions      :  1930
+		num normals        :  1930
+		num uvs            :  3860
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2496
+	processing begun of mesh:  ZaExterior11
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior42
+		registered as also a user of material:  wire_000000000
+		num positions      :  1904
+		num normals        :  1904
+		num uvs            :  3808
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior02
+		registered as also a user of material:  wire_196196196
+		num positions      :  2144
+		num normals        :  2144
+		num uvs            :  4288
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaInterior31
+		registered as also a user of material:  wire_196196196
+		num positions      :  2170
+		num normals        :  2170
+		num uvs            :  4340
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  ZaExterior12
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  RolaLant2
+		registered as also a user of material:  wire_000000000
+		num positions      :  1551
+		num normals        :  1551
+		num uvs            :  3102
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2064
+	processing begun of mesh:  ZaInterior16
+		registered as also a user of material:  wire_196196196
+		num positions      :  2174
+		num normals        :  2174
+		num uvs            :  4348
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  PneuExteriorSpate
+		registered as also a user of material:  wire_000000000
+		num positions      :  2617
+		num normals        :  2617
+		num uvs            :  5234
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3240
+	processing begun of mesh:  ZaExterior47
+		registered as also a user of material:  wire_000000000
+		num positions      :  1896
+		num normals        :  1896
+		num uvs            :  3792
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  PedalaDr
+		processing begun of Standard material:  Material__4
+		num positions      :  1295
+		num normals        :  1295
+		num uvs            :  2590
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1710
+	processing begun of mesh:  ManetaDr
+		registered as also a user of material:  Material__4
+		num positions      :  2216
+		num normals        :  2216
+		num uvs            :  4432
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2613
+	processing begun of mesh:  ZaInterior18
+		registered as also a user of material:  wire_196196196
+		num positions      :  2151
+		num normals        :  2151
+		num uvs            :  4302
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  FranaSpate
+		registered as also a user of material:  wire_196196196
+		num positions      :  6165
+		num normals        :  6165
+		num uvs            :  12330
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  7860
+	processing begun of mesh:  ZaExterior35
+		registered as also a user of material:  wire_000000000
+		num positions      :  1885
+		num normals        :  1885
+		num uvs            :  3770
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaInterior26
+		registered as also a user of material:  wire_196196196
+		num positions      :  2153
+		num normals        :  2153
+		num uvs            :  4306
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior45
+		registered as also a user of material:  wire_000000000
+		num positions      :  1914
+		num normals        :  1914
+		num uvs            :  3828
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  CabluPlatouri
+		registered as also a user of material:  wire_196196196
+		num positions      :  252
+		num normals        :  252
+		num uvs            :  504
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  330
+	processing begun of mesh:  AxPedalier
+		registered as also a user of material:  wire_000000000
+		num positions      :  146
+		num normals        :  146
+		num uvs            :  292
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  216
+	processing begun of mesh:  ZaExterior02
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior46
+		registered as also a user of material:  wire_000000000
+		num positions      :  1908
+		num normals        :  1908
+		num uvs            :  3816
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaExterior23
+		registered as also a user of material:  wire_000000000
+		num positions      :  1912
+		num normals        :  1912
+		num uvs            :  3824
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior27
+		registered as also a user of material:  wire_196196196
+		num positions      :  2158
+		num normals        :  2158
+		num uvs            :  4316
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  PneuInteriorFata
+		registered as also a user of material:  wire_189155097
+		num positions      :  4696
+		num normals        :  4696
+		num uvs            :  9392
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  5400
+	processing begun of mesh:  ZaInterior
+		processing begun of Standard material:  wire_134006006
+		num positions      :  2149
+		num normals        :  2149
+		num uvs            :  4298
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior14
+		registered as also a user of material:  wire_196196196
+		num positions      :  2146
+		num normals        :  2146
+		num uvs            :  4292
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ProtectieManSt
+		registered as also a user of material:  wire_134006006
+		num positions      :  1175
+		num normals        :  1175
+		num uvs            :  2350
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1440
+	processing begun of mesh:  ZaExterior29
+		registered as also a user of material:  wire_000000000
+		num positions      :  1916
+		num normals        :  1916
+		num uvs            :  3832
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaExterior31
+		registered as also a user of material:  wire_000000000
+		num positions      :  1904
+		num normals        :  1904
+		num uvs            :  3808
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  BidonRosu
+		processing begun of Standard material:  wire_211000000
+		num positions      :  2523
+		num normals        :  2523
+		num uvs            :  5046
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3000
+	processing begun of mesh:  ZaExterior32
+		registered as also a user of material:  wire_000000000
+		num positions      :  1906
+		num normals        :  1906
+		num uvs            :  3812
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaExterior15
+		registered as also a user of material:  wire_000000000
+		num positions      :  1904
+		num normals        :  1904
+		num uvs            :  3808
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2496
+	processing begun of mesh:  ZaInterior03
+		registered as also a user of material:  wire_196196196
+		num positions      :  2136
+		num normals        :  2136
+		num uvs            :  4272
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  RoataFata
+		processing begun of Standard material:  wire_186186186
+		num positions      :  30655
+		num normals        :  30655
+		num uvs            :  61310
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  38550
+	processing begun of mesh:  ClapaRoata01
+		registered as also a user of material:  wire_000000000
+		num positions      :  953
+		num normals        :  953
+		num uvs            :  1906
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1140
+	processing begun of mesh:  DerrailleurPlatouri
+		registered as also a user of material:  wire_196196196
+		num positions      :  6619
+		num normals        :  6619
+		num uvs            :  13238
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  8787
+	processing begun of mesh:  ZaExterior03
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  Ventil
+		registered as also a user of material:  wire_000000000
+		num positions      :  353
+		num normals        :  353
+		num uvs            :  706
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  420
+	processing begun of mesh:  ZaInterior47
+		registered as also a user of material:  wire_196196196
+		num positions      :  2165
+		num normals        :  2165
+		num uvs            :  4330
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  ZaExterior10
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaInterior29
+		registered as also a user of material:  wire_196196196
+		num positions      :  2169
+		num normals        :  2169
+		num uvs            :  4338
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2826
+	processing begun of mesh:  ZaExterior49
+		registered as also a user of material:  wire_000000000
+		num positions      :  1908
+		num normals        :  1908
+		num uvs            :  3816
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2478
+	processing begun of mesh:  ZaInterior38
+		registered as also a user of material:  wire_196196196
+		num positions      :  2162
+		num normals        :  2162
+		num uvs            :  4324
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2826
+	processing begun of mesh:  ProtectieManDr
+		processing begun of Standard material:  wire_162044044
+		num positions      :  1175
+		num normals        :  1175
+		num uvs            :  2350
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1440
+	processing begun of mesh:  Pedale
+		registered as also a user of material:  wire_196196196
+		num positions      :  6001
+		num normals        :  6001
+		num uvs            :  12002
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  29241
+	processing begun of mesh:  ZaExterior34
+		registered as also a user of material:  wire_000000000
+		num positions      :  1920
+		num normals        :  1920
+		num uvs            :  3840
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  AxGhidon
+		registered as also a user of material:  wire_000000000
+		num positions      :  3293
+		num normals        :  3293
+		num uvs            :  6586
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3762
+	processing begun of mesh:  ZaInterior48
+		registered as also a user of material:  wire_196196196
+		num positions      :  2163
+		num normals        :  2163
+		num uvs            :  4326
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2844
+	processing begun of mesh:  ZaInterior24
+		registered as also a user of material:  wire_196196196
+		num positions      :  2137
+		num normals        :  2137
+		num uvs            :  4274
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2817
+	processing begun of mesh:  ZaInterior32
+		registered as also a user of material:  wire_196196196
+		num positions      :  2170
+		num normals        :  2170
+		num uvs            :  4340
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior39
+		registered as also a user of material:  wire_000000000
+		num positions      :  1910
+		num normals        :  1910
+		num uvs            :  3820
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaExterior07
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior48
+		registered as also a user of material:  wire_000000000
+		num positions      :  1885
+		num normals        :  1885
+		num uvs            :  3770
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  Ghidon
+		registered as also a user of material:  wire_196196196
+		num positions      :  4398
+		num normals        :  4398
+		num uvs            :  8796
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4908
+	processing begun of mesh:  ZaExterior24
+		registered as also a user of material:  wire_000000000
+		num positions      :  1914
+		num normals        :  1914
+		num uvs            :  3828
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior22
+		registered as also a user of material:  wire_196196196
+		num positions      :  2154
+		num normals        :  2154
+		num uvs            :  4308
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior04
+		registered as also a user of material:  wire_000000000
+		num positions      :  1847
+		num normals        :  1847
+		num uvs            :  3694
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2400
+	processing begun of mesh:  CabluPlatouriF
+		registered as also a user of material:  wire_000000000
+		num positions      :  1893
+		num normals        :  1893
+		num uvs            :  3786
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2268
+	processing begun of mesh:  ZaInterior25
+		registered as also a user of material:  wire_196196196
+		num positions      :  2158
+		num normals        :  2158
+		num uvs            :  4316
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2823
+	processing begun of mesh:  ManetaVitezeDr
+		registered as also a user of material:  wire_000000000
+		num positions      :  345
+		num normals        :  345
+		num uvs            :  690
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  420
+	processing begun of mesh:  ZaExterior37
+		registered as also a user of material:  wire_000000000
+		num positions      :  1900
+		num normals        :  1900
+		num uvs            :  3800
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior20
+		registered as also a user of material:  wire_196196196
+		num positions      :  2182
+		num normals        :  2182
+		num uvs            :  4364
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaExterior18
+		registered as also a user of material:  wire_000000000
+		num positions      :  1881
+		num normals        :  1881
+		num uvs            :  3762
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ClapaRoata
+		registered as also a user of material:  wire_000000000
+		num positions      :  954
+		num normals        :  954
+		num uvs            :  1908
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1140
+	processing begun of mesh:  CapacBGalben
+		registered as also a user of material:  wire_000000000
+		num positions      :  1913
+		num normals        :  1913
+		num uvs            :  3826
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2400
+	processing begun of mesh:  CabluFranaSpateS
+		registered as also a user of material:  wire_000000000
+		num positions      :  852
+		num normals        :  852
+		num uvs            :  1704
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1020
+	processing begun of mesh:  ZaInterior23
+		registered as also a user of material:  wire_196196196
+		num positions      :  2151
+		num normals        :  2151
+		num uvs            :  4302
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  SuportBidonOrizontal
+		registered as also a user of material:  wire_000000000
+		num positions      :  3440
+		num normals        :  3440
+		num uvs            :  6880
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4398
+	processing begun of mesh:  PedalaSt
+		registered as also a user of material:  Material__4
+		num positions      :  1301
+		num normals        :  1301
+		num uvs            :  2602
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1710
+	processing begun of mesh:  ZaInterior30
+		registered as also a user of material:  wire_196196196
+		num positions      :  2149
+		num normals        :  2149
+		num uvs            :  4298
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  Furca
+		registered as also a user of material:  wire_131000000
+		num positions      :  6834
+		num normals        :  6834
+		num uvs            :  13668
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  8205
+	processing begun of mesh:  ZaExterior06
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior40
+		registered as also a user of material:  wire_000000000
+		num positions      :  1910
+		num normals        :  1910
+		num uvs            :  3820
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  CabluPinioane
+		registered as also a user of material:  wire_196196196
+		num positions      :  282
+		num normals        :  282
+		num uvs            :  564
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  360
+	processing begun of mesh:  SuportBidonVertical
+		registered as also a user of material:  wire_000000000
+		num positions      :  3431
+		num normals        :  3431
+		num uvs            :  6862
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4398
+	processing begun of mesh:  Pinioane
+		registered as also a user of material:  wire_000000000
+		num positions      :  8783
+		num normals        :  8783
+		num uvs            :  17566
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  23406
+	processing begun of mesh:  SabotFataD
+		registered as also a user of material:  wire_000000000
+		num positions      :  1588
+		num normals        :  1588
+		num uvs            :  3176
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1944
+	processing begun of mesh:  ZaInterior11
+		registered as also a user of material:  wire_196196196
+		num positions      :  2157
+		num normals        :  2157
+		num uvs            :  4314
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior09
+		registered as also a user of material:  wire_196196196
+		num positions      :  2138
+		num normals        :  2138
+		num uvs            :  4276
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaInterior35
+		registered as also a user of material:  wire_196196196
+		num positions      :  2172
+		num normals        :  2172
+		num uvs            :  4344
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  RoataSpate
+		registered as also a user of material:  wire_196196196
+		num positions      :  31822
+		num normals        :  31822
+		num uvs            :  63644
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  40524
+	processing begun of mesh:  ZaExterior21
+		registered as also a user of material:  wire_000000000
+		num positions      :  1888
+		num normals        :  1888
+		num uvs            :  3776
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior39
+		registered as also a user of material:  wire_196196196
+		num positions      :  2133
+		num normals        :  2133
+		num uvs            :  4266
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ManetaSt
+		registered as also a user of material:  Material__4
+		num positions      :  2275
+		num normals        :  2275
+		num uvs            :  4550
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2613
+	processing begun of mesh:  PneuExteriorFata
+		registered as also a user of material:  wire_000000000
+		num positions      :  2615
+		num normals        :  2615
+		num uvs            :  5230
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3240
+	processing begun of mesh:  ZaInterior08
+		registered as also a user of material:  wire_196196196
+		num positions      :  2143
+		num normals        :  2143
+		num uvs            :  4286
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaExterior33
+		registered as also a user of material:  wire_000000000
+		num positions      :  1904
+		num normals        :  1904
+		num uvs            :  3808
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  MecPedSt
+		registered as also a user of material:  wire_000000000
+		num positions      :  46
+		num normals        :  46
+		num uvs            :  92
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  60
+	processing begun of mesh:  SabotSpateS
+		registered as also a user of material:  wire_000000000
+		num positions      :  1582
+		num normals        :  1582
+		num uvs            :  3164
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1944
+	processing begun of mesh:  ZaInterior42
+		registered as also a user of material:  wire_196196196
+		num positions      :  2162
+		num normals        :  2162
+		num uvs            :  4324
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of mesh:  ZaInterior05
+		registered as also a user of material:  wire_196196196
+		num positions      :  2155
+		num normals        :  2155
+		num uvs            :  4310
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2820
+	processing begun of mesh:  ZaInterior07
+		registered as also a user of material:  wire_196196196
+		num positions      :  2152
+		num normals        :  2152
+		num uvs            :  4304
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaExterior08
+		registered as also a user of material:  wire_000000000
+		num positions      :  1883
+		num normals        :  1883
+		num uvs            :  3766
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaExterior19
+		registered as also a user of material:  wire_000000000
+		num positions      :  1904
+		num normals        :  1904
+		num uvs            :  3808
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaInterior44
+		registered as also a user of material:  wire_196196196
+		num positions      :  2149
+		num normals        :  2149
+		num uvs            :  4298
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2814
+	processing begun of mesh:  ZaExterior50
+		registered as also a user of material:  wire_000000000
+		num positions      :  1884
+		num normals        :  1884
+		num uvs            :  3768
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaExterior20
+		registered as also a user of material:  wire_000000000
+		num positions      :  1884
+		num normals        :  1884
+		num uvs            :  3768
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaExterior43
+		registered as also a user of material:  wire_000000000
+		num positions      :  1910
+		num normals        :  1910
+		num uvs            :  3820
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaExterior16
+		registered as also a user of material:  wire_000000000
+		num positions      :  1896
+		num normals        :  1896
+		num uvs            :  3792
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+	processing begun of mesh:  ZaExterior14
+		registered as also a user of material:  wire_000000000
+		num positions      :  1910
+		num normals        :  1910
+		num uvs            :  3820
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2484
+	processing begun of mesh:  ZaExterior25
+		registered as also a user of material:  wire_000000000
+		num positions      :  1879
+		num normals        :  1879
+		num uvs            :  3758
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2460
+	processing begun of mesh:  ZaInterior33
+		registered as also a user of material:  wire_196196196
+		num positions      :  2165
+		num normals        :  2165
+		num uvs            :  4330
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2832
+	processing begun of camera (UniversalCamera):  Camera
+	processing begun of light (POINT):  Lamp
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 28.4662 secs

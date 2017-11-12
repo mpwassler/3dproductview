@@ -22,6 +22,14 @@ class ProductOptionControl extends Component {
   	window.dispatchEvent(event)
   }
 
+  emitColorChangeEvent(color) {
+  	let event = new CustomEvent('change-color', { detail: {
+  		meshName: this.props.optionName,
+  		color
+  	}})
+  	window.dispatchEvent(event)
+  }
+
   toggleAccordion(e) {
   	if(!this.state.accordionOpen) {
   		this.optionBody.style.height = this.state.bodyDefaultHeight
@@ -41,7 +49,10 @@ class ProductOptionControl extends Component {
 	        </div>        
 	        <div className="productoption_body" ref={ el => this.optionBody = el} >
 	        	{this.props.optionValues.map( value => {
-	        		return <a key={value} className="productoption_btn" href="#">{value}</a>
+	        		return <a key={value} onClick={(e) => {
+	        			e.preventDefault()
+	        			this.emitColorChangeEvent(value)
+	        		}} className="productoption_btn" href="#">{value}</a>
 	        	})}
 	        </div>        
         </div>

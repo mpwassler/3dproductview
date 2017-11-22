@@ -67,16 +67,15 @@ class Scene3d extends Component {
   }
 
   setEngine = () => {
-    this.stage.style.width = '100%'
-    this.stage.style.height = '100%'
+    this.stage.style.width = '200%'
+    this.stage.style.height = '200%'
     this.engine = new Engine(
       this.stage,
       true,
       true
-    )
-
-    console.log(this.engine)
-    
+    )    
+    this.stage.style.width = '100%'
+    this.stage.style.height = '100%'
   }
 
   setScene = () => {
@@ -96,17 +95,7 @@ class Scene3d extends Component {
     let modelGroup = new Mesh.CreateBox( "modelGroup", 1, this.scene )
     modelGroup.isVisible = false
     loadBikeModel.onSuccess = ( t ) => {
-      console.log(t)       
       
-      //frame
-      console.log( this.scene.getMeshByID('Cadru1'))
-      //seat
-      console.log( this.scene.getMeshByID('Sa'))
-      //handlebars 
-      console.log( this.scene.getMeshByID('Ghidon'))
-      // waterbottle
-      console.log( this.scene.getMeshByID('BidonRosu'))
-
       this.scene.getMeshByID('Sa').material = this.scene.getMeshByID('Sa').material.clone()
       this.scene.getMeshByID('Ghidon').material = this.scene.getMeshByID('Ghidon').material.clone()
       this.scene.getMeshByID('BidonRosu').material = this.scene.getMeshByID('BidonRosu').material.clone()

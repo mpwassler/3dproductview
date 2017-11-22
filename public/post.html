@@ -5,22 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
    <link rel="stylesheet" href="https://primaxstudio.com/wp-content/mmr/A.0da82352-1510426111.min.css.pagespeed.cf.5IJ9v2iG3W.css">
-    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href=" /build/static/css/main.35fa17df.css">
+    <script src="/build/static/js/main.a17fcb05.js"></script>
+    <style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+  
   <style>
-    .post {max-width: 990px; margin: 0 auto; padding-top: 100px;}
+    .post {max-width: 990px; margin: 0 auto; padding-top: 100px; padding-bottom: 100px;}
   </style>
   </head>
   <body>
     <div class="post">
-      <h1>Enhancing E commerce experiences with 3d product configuators</h1>
+      <h1>Enhancing E commerce experiences with 3D product configuators</h1><br><br>
       <p>
         Its common for on line stores to have variations of products for their customers to choose from. This is usually a plain drop down box on the individual product pages. A lot of times these variations be visual elements of the product such as different colors customers can choose from. But what if these product configurations didn't have to be so boring? 
-      </p>
+      </p><br><br>
       <p>
-        In this article im going to demonstrate how we can spice up these mundane product options and make a more rich engaging experience for customers. 
-      </p>
+        In this article I'm going to demonstrate how we can spice up these mundane product options and make a more rich engaging experience for customers. To do this where going to use a game engine developed by a team at Microsoft to build a 3D interactive product configurator. This will provide a fun and engaging way for customers to interact with the product as well as a few additional benefits like forgoing the need to hire photographers and have expensive photo shoots to show every possible option a product can be purchased in.  
+      </p><br><br>
+      <br><br>
       
     </div>
+       <div id="root" style="position:relative;"></div>
+    <div class="post">
+
+      <p>
+        Because 3D models can be rendered dynamically we can render our product in any color or configuration we want with one 3D asset. In this case I fount a free 3D model on line from <a href="https://free3d.com/3d-model/racing-bicycle-82526.html"> free3d.com</a>. Our fictitious store is going to be an on line bike shop. And this 3D road bike is going to be our fictitious product. The file format we want here is a .obj file, sometimes called a WaveFront model. This is a slandered transfer format for 3D models used to transfer a model from one 3D software package to another. 
+      </p><br><br>
+      <p>
+        We will also be using <a href="https://www.blender.org/">Blender</a> for this tutorial. Blender is a free open source 3D modeling and image editing software package. We will use Blender to prepare the model to be rendered on the web. 
+      </p><br><br>
+      <p>
+        There are a few different tools out there for doing 3D graphics in a web browser. The most popular of which is a library called <a href="https://threejs.org/">Three.js</a>. Three.js is a great library in its own right but in this tutorial we are going to use the slightly less popular but - in my opinion - more production ready <a href="https://www.babylonjs.com/">Babylon.js</a>. Not only does it have a more interesting name, it comes with a lot of built in features that we would have to implement ourselves in Three.js, such as click detection on models. It also has more polished built in camera controls, which is the reason I like it for this demo. 
+      </p><br><br>
+      <h2>Canvas and WebGL</h2><br><br>
+      <p>
+        All of these libraries are made possible by an HTML5 browsers API called webGL. WebGL is a subset of the OpenGL ES standard for computer graphics used on native mobile and desktop devices. Things like Blender are built on top of OpenGL. The webGL API allows web developers to execute code on users graphics cards directly. This is where the computing horsepower needed for dynamic 3D rendering comes from. While the webGL API is powerful it is a very low level API and is extremely technical to work with. It involves manually loading bites into buffers and requires a good working knowledge of linear algebra. 
+      </p><br><br>
+      <p>
+        Babylon will abstract all this away for us and make working with 3D in the browser feel like working inside a 3D application. We will be able to get away with just knowing some simple geometry. It will however be helpful to have a good knowledge of 3D terminology and some experience modeling in software like Blender, Maya, or 3DS Max can go a long way here. The objects Babylon gives you to work with will feel very similar to the options in the dashboard of most 3D software.
+      </p><br><br>
+
+      <p>
+        We are also going to be using React.js to handle the UI in this demo. No prior knowlege of react is required but experience in it will certainly be helpful. To start off we will need to download the create-react-app cli 
+      </p><br><br>
+      <p>
+        we can do this through the npm package manager. In terminal type 
+      </p>
+      <pre>npm install -g create-react-app</pre>
+      <p>
+        Now create a new project directory and type
+      </p><br><br>
+      <pre>create-react-app product-3D</pre>
+      <pre>cd product-3D</pre>
+      <p>
+        You should end up with a folder structure that looks like this
+      </p><br><br>
+      <pre>
+        node_modules/
+        public/
+          --favicon.ico   
+          --index.html    
+          --manifest.json
+        src/
+          --App.css                  
+          --index.js
+          --App.js                   
+          --logo.svg
+          --App.test.js              
+          --registerServiceWorker.js
+          --index.css
+        .gitignore
+        README.md
+        package.json
+        yarn.lock
+      </pre>
+      <p>
+        You can learn more about the create react app boilerplate from their <a href="https://github.com/facebookincubator/create-react-app">github page</a>. But all these files are generated by it to set you up with a basic template to start from. This configures babel and web-pack to run for you so you don't have to worry about any set up and can just start writing code.
+      </p><br><br>
+      <p>
+        Most of our work will be done in the src/ folder. To start we will create a component to render our 3D scene. Create a Components directory in the src/ folder and create a Scene3d.js
+      </p><br><br>
+      
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 1130px;">
+      <xmp id="editor" class="editor">
+      // src/Components/Scene3d.js 
+
+      // Import our dependancies 
+      import React, { Component } from 'react'
+      // Destructuring really helps clean up babylon projects 
+      import  {
+        Scene,
+        Engine, 
+        AssetsManager,
+        ArcRotateCamera,
+        Vector3,
+        HemisphericLight,
+        Mesh,
+        Color3,
+        Texture
+      } from 'babylonjs'
+      // Here we extend Reacts component class 
+      class Scene3d extends Component {
+        // Makes the canvas behave responsively 
+        onResizeWindow = () => {
+            if (this.engine) {
+              this.engine.resize();
+            }
+        }
+        // Sets up our canvas tag for webGL scene 
+        setEngine = () => {
+          this.engine = new Engine(
+            this.stage,
+            true,
+            true
+          )    
+          this.stage.style.width = '100%'
+          this.stage.style.height = '100%'
+        }
+        // Creates the scene graph 
+        setScene = () => {
+          this.scene = new Scene(this.engine)     
+          /* 
+            By default scenes have a blue background here we set 
+            it to a cool gray color
+          */
+          this.scene.clearColor = new Color3(0.9,0.9,0.92)
+        }
+        /* 
+           Adds camera to our scene. A scene needs a camera for anything to
+           be visible. Also sets up rotation Controls
+        */
+        setCamera = () => {
+           this.camera = new ArcRotateCamera("Camera", Math.PI * 2, Math.PI / 2, 20, new Vector3( 0, 5, -5 ), this.scene);
+           this.camera.attachControl(this.stage, true);             
+        }       
+        //Build the scene when the component has been loaded.          
+        componentDidMount() {
+          this.setEngine()
+          this.setScene()
+          this.setCamera()
+          window.addEventListener('resize', this.onResizeWindow)
+        }
+        //Renderes our Canvas tag ans saves a reference to it.          
+        render() {
+          return (
+             <canvas className="scene" ref={ el => this.stage = el}></canvas>              
+          )
+        }
+      }      
+      //returns the scene to be used by other components
+      export default Scene3d
+      </xmp>      
+    </div>
+    <div class="post">
+        <h2>The Render Function</h2><br><br>
+        <p>
+          The above component will hold all our 3D content which is loaded in an HTML5 canvas tag. The render function will simply return our canvas tag. The "rel" attribute alows us to pass a function that recives the DOM element which we can use to save as a property on our component class. This lets us bypass the need to use something like Jquery to select the element. Then we can access is as "this.stage" in our class methods.
+        </p><br><br>
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 160px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+        render() {
+          return (
+             <canvas className="scene" ref={ el => this.stage = el}></canvas>              
+          )
+        }
+      </xmp>
+    </div>
+    <div class="post">
+        
+        <p>
+         This reference is what we will use to pass the canvas element to Babylon.js. This happens in the "setEngine" method. The engine class takes three arguments. The canvas element - in our case "this.stage", a boolean that says if we want to use webGL vs the 2D canvas API, and another boolean that says if we want anti-aliasing - which makes the edges of our model look nicer but lowers performance a bit. In our case we want both booleans to be set to true.
+        </p><br><br>
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 220px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+         setEngine = () => {
+          this.engine = new Engine(
+            this.stage,
+            true,
+            true
+          )    
+          this.stage.style.width = '100%'
+          this.stage.style.height = '100%'
+        }
+      </xmp>
+    </div>
+    <div class="post">
+        <h2>Creating our 3D scene</h2><br><br>
+        <p>
+         After the engine the next piece we need for any 3D scene will be the actual Babylon scene object. This object is a manager for all the other objects in our scene. This pattern is commonly refered to as a scene graph. It hold 3D object classes much in the same way the DOM object holds the HTML elements of a web page. If we want an object to apear in our 3D scene we add it to the scene object.
+        </p><br><br>
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 220px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+         setScene = () => {
+          this.scene = new Scene(this.engine)     
+          /* 
+            By default scenes have a blue background here we set 
+            it to a cool gray color
+          */
+          this.scene.clearColor = new Color3(0.9,0.9,0.92)
+        }
+      </xmp>
+    </div>
+    <script src="/build/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
     
+    Array.prototype.slice.call(document.querySelectorAll(".editor")).forEach( el => {
+      var text = el.innerHTML
+      var editor = ace.edit(el);
+      //editor.session.setValue(text)
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/jsx");
+    })
+
+   
+</script>
   </body>
 </html>

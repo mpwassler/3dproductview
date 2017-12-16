@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {TweenMax, Power2} from "gsap"
 
 class ProductOptionControl extends Component {
 
@@ -10,11 +10,19 @@ class ProductOptionControl extends Component {
     	accordionOpen: false  	
     }
     this.toggleAccordion = this.toggleAccordion.bind(this)
+    window.addEventListener('accordion-open', () => {
+      if(this.state.accordionOpen) {
+        TweenMax.to(this.optionBody, 0.05, {height: 0, ease: Power2.easeOut})
+        this.setState({accordionOpen: false})
+        this.optionBody.style.visibility = 'hidden'        
+      }
+    })
   }
 
   componentDidMount() {
-     this.setState({bodyDefaultHeight: this.optionBody.style.height})
+     this.setState({bodyDefaultHeight: this.optionBody.clientHeight})
      this.optionBody.style.height = 0
+     this.optionBody.style.visibility = 'hidden'
   }
 
   emitSectionChangeEvent() {
@@ -30,29 +38,37 @@ class ProductOptionControl extends Component {
   	window.dispatchEvent(event)
   }
 
+  emitAccordionOpenEvent(color) {
+    let event = new CustomEvent('accordion-open')
+    window.dispatchEvent(event)
+  }
+
   toggleAccordion(e) {
   	if(!this.state.accordionOpen) {
-  		this.optionBody.style.height = this.state.bodyDefaultHeight
-  		this.setState({accordionOpen: true})
-  		this.emitSectionChangeEvent()
+      this.setState({accordionOpen: true})
+      this.optionBody.style.visibility = 'visible'
+      TweenMax.to(this.optionBody, 0.05, {height: this.state.bodyDefaultHeight, ease: Power2.easeOut})
+      this.emitAccordionOpenEvent()
+      this.emitSectionChangeEvent()
   	} else {
-  		this.optionBody.style.height = 0
+      TweenMax.to(this.optionBody, 0.05, {height: 0, ease: Power2.easeOut})
   		this.setState({accordionOpen: false})
+      this.optionBody.style.visibility = 'hidden'
   	}
   }
 
   render() {
     return (       
     	<div className="productoption" >
-	        <div onClick={this.toggleAccordion} className="productoption_header" >
+	        <button onClick={this.toggleAccordion} className="productoption_header" >
 	        	{this.props.optionName}
-	        </div>        
+	        </button>        
 	        <div className="productoption_body" ref={ el => this.optionBody = el} >
 	        	{this.props.optionValues.map( value => {
-	        		return <a key={value} onClick={(e) => {
+	        		return <button key={value} onClick={(e) => {
 	        			e.preventDefault()
 	        			this.emitColorChangeEvent(value)
-	        		}} className="productoption_btn" href="#">{value}</a>
+	        		}} className="productoption_btn" >{value}</button>
 	        	})}
 	        </div>        
         </div>

@@ -39,26 +39,32 @@
     <div class="post">
 
       <p>
-        Because 3D models can be rendered dynamically we can render our product in any color or configuration we want with one 3D asset. In this case I fount a free 3D model on line from <a href="https://free3d.com/3d-model/racing-bicycle-82526.html"> free3d.com</a>. Our fictitious store is going to be an on line bike shop. And this 3D road bike is going to be our fictitious product. The file format we want here is a .obj file, sometimes called a WaveFront model. This is a slandered transfer format for 3D models used to transfer a model from one 3D software package to another. 
+        Because 3D models can be rendered dynamically we can render our product in any color or configuration we want with one 3D asset. In this case I fount a free 3D model on line from <a href="https://free3d.com/3d-model/racing-bicycle-82526.html"> free3d.com</a>. Our fictitious store is going to be an on line bike shop. And this 3D road bike is going to be our fictitious product. The file format we want here is a .obj file, sometimes called a WaveFront model. This is a standard format for 3D models used to transfer a model from one 3D software package to another. 
       </p><br><br>
       <p>
         We will also be using <a href="https://www.blender.org/">Blender</a> for this tutorial. Blender is a free open source 3D modeling and image editing software package. We will use Blender to prepare the model to be rendered on the web. 
       </p><br><br>
       <p>
-        There are a few different tools out there for doing 3D graphics in a web browser. The most popular of which is a library called <a href="https://threejs.org/">Three.js</a>. Three.js is a great library in its own right but in this tutorial we are going to use the slightly less popular but - in my opinion - more production ready <a href="https://www.babylonjs.com/">Babylon.js</a>. Not only does it have a more interesting name, it comes with a lot of built in features that we would have to implement ourselves in Three.js, such as click detection on models. It also has more polished built in camera controls, which is the reason I like it for this demo. 
+        There are a few different tools out there for doing 3D graphics in a web browser. The most popular of which is a library called <a href="https://threejs.org/">Three.js</a>. Three.js is a great library in its own right but in this tutorial we are going to use the slightly less popular but; in my opinion,  easier to work with - <a href="https://www.babylonjs.com/">Babylon.js</a>. Not only does it have a more interesting name, it comes with a lot of built in features that we would have to implement ourselves in Three.js, such as click detection on models. It also has more polished built in camera controls, which is the reason I like it for this demo. 
       </p><br><br>
       <h2>Canvas and WebGL</h2><br><br>
       <p>
-        All of these libraries are made possible by an HTML5 browsers API called webGL. WebGL is a subset of the OpenGL ES standard for computer graphics used on native mobile and desktop devices. Things like Blender are built on top of OpenGL. The webGL API allows web developers to execute code on users graphics cards directly. This is where the computing horsepower needed for dynamic 3D rendering comes from. While the webGL API is powerful it is a very low level API and is extremely technical to work with. It involves manually loading bites into buffers and requires a good working knowledge of linear algebra. 
+        All of these libraries are made possible by an HTML5 browsers API called webGL. WebGL is a subset of the OpenGL ES standard for computer graphics used on native mobile and desktop devices. Things like Blender are built on top of OpenGL. The webGL API allows web developers to execute code on users graphics cards directly. This is where the computing horsepower needed for dynamic 3D rendering comes from. While the webGL API is powerful, it is a very low level API and is extremely technical to work with. It requires a good working knowledge of linear algebra. 
       </p><br><br>
       <p>
-        Babylon will abstract all this away for us and make working with 3D in the browser feel like working inside a 3D application. We will be able to get away with just knowing some simple geometry. It will however be helpful to have a good knowledge of 3D terminology and some experience modeling in software like Blender, Maya, or 3DS Max can go a long way here. The objects Babylon gives you to work with will feel very similar to the options in the dashboard of most 3D software.
+        Babylon will abstract all this away for us and make working with 3D in the browser feel like working inside a 3D application. We will be able to get away with just knowing some simple geometry. It will however be helpful to have a good knowledge of 3D terminology and some experience modeling in software like Blender, Maya, or 3DS Max. The objects Babylon gives you to work with will feel very similar to the options in the dashboard of most 3D software packages.
       </p><br><br>
 
       <p>
-        We are also going to be using React.js to handle the UI in this demo. No prior knowlege of react is required but experience in it will certainly be helpful. To start off we will need to download the create-react-app cli 
+        We are also going to be using React.js to handle the UI in this demo. No prior knowlege of react is required but experience in it will certainly be helpful. Lets start with a short primer on both React and Babylon to go over some typical conventions of both libraries.
+
       </p><br><br>
+      <!-- REACT PRIMER -->
+      <!-- REACT PRIMER -->
+      <!-- BABYLON PRIMER -->
+      <!-- BABYLON PRIMER -->
       <p>
+        To start off we will need to download the create-react-app cli 
         we can do this through the npm package manager. In terminal type 
       </p>
       <pre>npm install -g create-react-app</pre>
@@ -223,6 +229,477 @@
         }
       </xmp>
     </div>
+    <div class="post">
+        <h2>Adding a camera </h2><br><br>
+        <p>
+          The next important step our scene need to render is a camera. In Babylon and most 3D renderer s we have to add a camera before anything will show up in our scene. The camera acts at the view port the user looks through. The camera takes the following arguments: an id for selecting it in the scene if we need to, the alpha, delta, radius, a point to look at, and the scene to add the camera to. Babylon.js has quite a few built in camera types, the one we are using in this example is the Arc Rotate Camera. It is a special camera designed for rotating around a model. It is an excellent camera type to use for things like product viewers. The camera is essentially fixed to a sphere around the point it is set to look at.
+        </p><br><br>
+        <p>
+          The most important parameters in the camera are the alpha, beta, and radius. Think of this as the cameras x, y, and z coordinates. The alpha is the left and right position of the camera. The beta is the up and down position and the radius is the zoom level of the camera. It can be tricky to think in this way at first but it's fairly simple once your get used to it. 
+        </p><br><br>
+        <p>
+          We move the focal point back a bit on the y and z plane to make the camera appear to focus on the center of the bike model.
+        </p><br><br>
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 180px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+         setCamera = () => {
+            // Arguments: "ID", Alpha, Beta, Radius, Point(x,y,z), Scene
+            this.camera = new ArcRotateCamera("Camera", Math.PI * 2, Math.PI / 2, 20, new Vector3( 0, 5, -5 ), this.scene);
+            // This makes the camera interactive
+            this.camera.attachControl(this.stage, true);
+         }
+      </xmp>
+    </div>
+    <div class="post">
+        <h2>Putting it all together</h2><br><br>
+        <p>
+          Now that we have all the basic elements of a scene its time to put them all together and make something happen. We will add the following code in a react specific function called "componentDidMount". This method is <a target="_blank" href="https://reactjs.org/docs/react-component.html#the-component-lifecycle">part of Reacts built in life cycle methods</a> and is called whenever a component is fully loaded into the DOM. We use this specific method because that this point we know our canvas tag is loaded and ready to be used. In this method will will make the calls to all our other set up methods in the order they are needed so Engine > Scene > Camera. 
+        </p><br><br>      
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 180px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+        componentDidMount() {
+          this.setEngine()
+          this.setScene()
+          this.setCamera()
+          window.addEventListener('resize', this.onResizeWindow)
+        }
+      </xmp>
+    </div>
+    <div class="post">
+        <p>
+          After this our basic Babylon scene component is ready to go so we can go to the parent App component that create-react-app provided for us and load it.
+        </p><br><br>      
+    </div>
+     <div class="editor_wrap" style="position:relative;min-height: 300px;">
+      <xmp id="editor" class="editor">
+        // src/App.js 
+        import React, { Component } from 'react'
+        import './App.css'
+        import Scene3d from './Components/Scene3d'
+
+        class App extends Component {
+          render() {
+            return (
+              <div className="App">                
+                <Scene3d />                                        
+              </div>
+            )
+          }
+        }
+
+        export default App
+      </xmp>
+    </div>
+    <div class="post">
+        <h2>Loading our Model</h2><br><br>
+        <p>
+          If we come back and check out browser now you'll notice we have... nothing. Kinda disappointing I know, but we actually do have a working 3d scene here; we just haven't started it yet. We have to load our model first. Lets add a loadModels function that will be responsible for fetching our model.
+        </p><br><br> 
+        <p>
+          Pay special attention to the runRenderLoop method. This takes a call back that is going to be called over and over again. To be precise, it will try to run 60 times per second - if possible. It will run slower if it has to. Inside this callback we call the render method on the scene, this draws a frame in our 3D scene. So each time it runs, up to 60 times per second it will draw a frame. This is what causes the scene to appear animated. By redrawing a new frame of every small change in the scene it creates a flip book style effect that gives the illusion of motion. 60 frames per second is ideal for smooth animation.  
+        </p><br><br>      
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 510px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+        loadModels = () => {
+          /*
+          * the AssetManager class is responsible 
+          * for loading files
+          */ 
+          let loader = new AssetsManager(this.scene)     
+          // Arguments: "ID", "Root URL", "URL Prefix", "Filename"
+          let loadBikeModel = loader.addMeshTask("bike", "", "/", "bike.babylon")
+          /*
+          *  Loader is given a callback to run when the model has loaded
+          *  the variable t is our imported scene. You can use
+          *  it to examine all the mesh's loaded.
+          */ 
+          loadBikeModel.onSuccess = ( t ) => {        
+            // Start the animation loop once the model is loaded  
+            this.engine.runRenderLoop(() => {            
+              this.scene.render() 
+            })
+            // The model came in a little dark so lets add some extra light
+            let light = new HemisphericLight('light1', new Vector3(0,1,0), this.scene)
+          }
+          // It also calls an Error callback if something goes wrong
+          loadBikeModel.onError = function (task, message, exception) {
+              console.log(message, exception);
+          }
+          // We return the fully configured loader
+          return loader
+        }
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          Then we can call the loader in our componentDidMount method.
+        </p><br><br>      
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 240px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+        componentDidMount() {
+          this.setEngine()
+          this.setScene()
+          this.setCamera()
+          /* 
+          *  the loader we return has a load method 
+          *  attached that will initiate everything.
+          */
+          this.loadModels().load()                
+        }
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          Now if you refresh your browser you should see our bike model right in the middle of your screen. You'll also notice that if you click and drag around with your mouse the scene already has a nice level of interactivity built in. This is one of the benefits that Babylon.js's ArcRotateCamera gives us. This is a nice advantage Babylon has over other 3D Libraries. The built in controls already contain some nice smooth physics effects that would be a lot of work to implement ourselves. 
+        </p><br><br> 
+
+        <p>
+          With our model loaded and controls working, the next thing to do is implement some of our product configuration controls. This is the part where React comes in as We are going to use regular DOM elements overplayed on top of the canvas for this. While you can add click able control elements inside a Babylon scene, if your not building something like a game it really isn't worth it to do so. Native DOM elements have years of testing and development behind them in modern browsers and so we are going to have a much smoother experience implementing our controls that way. Native DOM elements give us efficient click event listeners and tools for helping with accessibility for free.
+        </p><br><br>         
+        <p>
+          Lets start by creating a component to hold out controls. We create an individual control component that makes up each individual section we want a control for. Create a Controls.js file, and a ProductOptionControls.js file in the components directory.
+        </p><br><br>
+        <pre>src/Components/Controls.js</pre>
+        <pre>src/Components/ProductOptionControls.js</pre>
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 360px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Controls.js 
+        import React, { Component } from 'react'
+        // The Controls component will import out ProductOptionControl
+        import ProductOptionControl from './ProductOptionControl'
+
+        class Controls extends Component {
+          render() {
+            return (       
+                <div className="controls" >
+                // We are going to take our options as an array of props.
+                {this.props.options.map( (option, cnt) =>  {
+                  // We'll render an inidvidual control for each item in the array.
+                  return <ProductOptionControl  />
+                })}
+                </div>        
+            )
+          }
+        }
+        export default Controls
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          This is essentially as complex as this component will need to get. It takes in a list of props, maps over those props and returns a component for each one. Mapping arrays is a common operation in many programing languages. A map function takes an array and calls a function on every element in the array, creating a new array from the returned result of each function call. In JavaScript map is a method of the built in array object. Because JSX is compiled to JavaScript function calls in React we can use JSX directly as if it where JavaScript, which is why we can return it directly in our map function. The end result is an array of our elements to render to the screen.
+        </p><br><br>         
+        <p>
+          We can set up our individual controls in our ProductOptionControls component. Each control is going to be in an accordion so this component will handle that along with all the various click events we need to set up.
+        </p><br><br>         
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 1300px;">
+      <xmp id="editor" class="editor">
+        // src/Components/ProductOptionControl.js 
+        import React, { Component } from 'react'
+
+        class ProductOptionControl extends Component {
+
+          constructor(props) {
+            super(props)
+            // Set initial state
+            this.state = {
+              bodyDefaultHeight: null,   
+              accordionOpen: false    
+            }
+            /*
+            * Bind event to this class. We will use this method in a
+            * click event listener and this is to keep the 
+            * correct scope.
+            */
+            this.toggleAccordion = this.toggleAccordion.bind(this)
+          }
+
+          componentDidMount() {
+             /* 
+             * We record the components initial height so it can be used 
+             * make the accordion open and close. This way we know 
+             * exactly how tall it needs to be.
+             */
+             this.setState({bodyDefaultHeight: this.optionBody.style.height})
+             // Then we set its height to 0 to close it.
+             this.optionBody.style.height = 0
+          }
+
+          toggleAccordion(e) {
+            /*
+            * When a user clicks the the title of the control we 
+            * want to open the accordion, unless it is already
+            * open in which case we want to close it
+            */
+            if(!this.state.accordionOpen) {
+              /*
+              *  To open the accordion we set its height to the original
+              *  value we stored when the component mounted
+              */
+              this.optionBody.style.height = this.state.bodyDefaultHeight
+              this.setState({accordionOpen: true})
+            } else {
+              // back to 0 to close 
+              this.optionBody.style.height = 0
+              this.setState({accordionOpen: false})
+            }
+          }
+
+          render() {
+            return (       
+              <div className="productoption" >
+                  /*
+                  *  The accordion header, this is always visible. We attach a click
+                  *  event handler to it to handle opening and closing of 
+                  *  the accordion body
+                  */
+                  <div onClick={this.toggleAccordion} className="productoption_header" >
+                    {this.props.optionName}
+                  </div>        
+                  /*
+                  *  We capture another reference to a DOM element here. 
+                  *  This is to read and modify the height so we 
+                  *  can make our accordion
+                  */ 
+                  <div className="productoption_body" ref={ el => this.optionBody = el} >
+                    // Map over all the possible options and list them out
+                    {this.props.optionValues.map( value => {
+                      return <a key={value}  className="productoption_btn" href="#">{value}</a>
+                    })}
+                  </div>        
+                </div>
+            )
+          }
+        }
+
+        export default ProductOptionControl
+
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          This gives us our basic structure now we need to load these components in app.js and pass in the options we want. We will set the options as state on the app component. We have one array to hold the option names and another multidimensional array to list out the possible options that can be selected.
+        </p><br><br>                 
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 610px;">
+      <xmp id="editor" class="editor">
+        // src/App.js 
+        import React, { Component } from 'react'
+        import logo from './logo.svg'
+        import './App.css'
+        import Scene3d from './Components/Scene3d'
+        import Controls from './Components/Controls'
+
+        class App extends Component {
+
+          constructor(props) {
+            super(props)
+            this.state = {
+              optionNames: [ 'frame', 'seat', 'waterbottle', 'handlebars' ],   
+              optionValues: [
+                [ 'red', 'blue', 'green', 'yellow' ],
+                [ 'grey', 'white', 'black' ],
+                [ 'grey', 'white', 'black' ],
+                [ 'grey', 'white', 'black' ]
+              ]
+            }
+          }
+
+          render() {
+            return (
+              <div className="App">                
+                <Scene3d />                
+                <Controls options={this.state.optionNames} optionValues={this.state.optionValues} />        
+              </div>
+            )
+          }
+        }
+
+        export default App
+
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          We have to pass these options down through our controls component. In Controls.js we will pass each configuration option to a ProductOptionControl component as props inside our map function. You will notice we are also using a special prop called key, this is just a unique identifier that helps React identify which component is which for updates. All you need to know about this is that it has to be unique to each item and is generally added any time you create a list of the same component in a loop.
+        </p><br><br>                 
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 300px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Controls.js 
+        class Controls extends Component {
+          render() {
+            return (       
+                <div className="controls" >
+                // We are going to take our options as an array of props.
+                {this.props.options.map( (option, cnt) =>  {
+                  // We'll render an inidvidual control for each item in the array.
+                  return <ProductOptionControl key={option} optionName={option} optionValues={this.props.optionValues[cnt]} />
+                })}
+                </div>        
+            )
+          }
+        }
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          You should now see what makes up the bulk of our layout. We have our 3D scene with an overlay of an accordion of controls on the right hand side. From here all we have to is to actually link the controls up and make them functional.
+        </p><br><br>
+        <p>
+          When you break the elements of your page down into components like this you are inevitably going to have to deal with the issue of having components communicate with one another. In our case we need our controls to be able to communicate with our scene. Our controls need to be able to change the state of the scene. There are well established patterns for managing state in React, including the Flux pattern recommended by Facebook. Flux, however is a design pattern and not a library or implementation we can add to our project. A popular implementation of the flux pattern is the Redux library. While its good to be aware of these things and when you may need them our example is simple enough that we can get by with a simple event driven design. 
+        </p><br><br>   
+        <p>
+          Lucky for us modern web browsers ship with an extensible and robust event system built in. We use the browsers event system anytime we listen for clicks on buttons or links. We can use this built in event system to transmit our own events.
+        </p><br><br>    
+        <p>
+          We do this by creating our event as an instance of the CustomEvent class provided by the browser. The constructor for a CustomEvent takes two arguments. The name of the event - this can be any string you want to name it and will be how the event is hooked into by the listener - and an options object where we can pass custom data to our listener via the detail property. We will use the detail property to pass the name of our control section, so we know which control this is coming from. Then we can call the dispatchEvent method on the window object and pass it our CustomEvent to actually trigger the event.
+        </p><br><br>                 
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 540px;">
+      <xmp id="editor" class="editor">
+        // src/Components/ProductOptionControl.js 
+
+        /*
+        * Add a new method to notify our scene that it
+        * needs to move the camera when a control
+        * is opened so we can get a better view
+        * of the area our control is editing.
+        */
+        emitSectionChangeEvent() {
+          // Arguments: Event Name, Event Options
+          let event = new CustomEvent('move-camera', { detail: this.props.optionName })
+          // Triggers the event on the window object
+          window.dispatchEvent(event)
+        }
+
+        toggleAccordion(e) {
+          if(!this.state.accordionOpen) {
+            this.optionBody.style.height = this.state.bodyDefaultHeight
+            this.setState({accordionOpen: true})
+            /*
+            * Call our new method here in the accordion 
+            * event hook
+            */
+            this.emitSectionChangeEvent()
+          } else {
+            this.optionBody.style.height = 0
+            this.setState({accordionOpen: false})
+          }
+        }
+      </xmp>
+    </div>
+    <div class="post">        
+        <p>
+          Next we need to listen for that event in our Scene3d component. When a "move-camera" event is fired we are going to animate our 3D camera in our scene to focus in on the section of the model affected by those controls.   
+        </p><br><br>
+        <p>
+          To do that we need to know where the camera needs to be according to the cameras alpha, beta, and radius properties. This can be a tough thing to visualize in our heads so it is best to actually use the built in scene controls to find the best position. To do this we simply need to do a console log one the camera inside our render loop. This way we will get real time updates as to where the camera is as we move it. Then we just move around with the mouse until we find a position we like and we save that inside an object in our component. I have included the coordinates I have chosen in the example below but you can position these however you like.
+        </p><br><br>                 
+    </div>
+    <div class="editor_wrap" style="position:relative;min-height: 820px;">
+      <xmp id="editor" class="editor">
+        // src/Components/Scene3d.js 
+        
+        class Scene3d extends Component {
+          /*
+          * We add an object which contains a hash table
+          * of our regions. These nested objects 
+          * contain the coordinates we will move 
+          * the camera to if there key is 
+          * selected. As well as an id 
+          * to select individual meshs
+          */
+          regions = {    
+            frame : {  id: 'Cadru1', alpha: 6.283185307179586, beta: 1.5707963267948966, radius: 10.038390861264055 },      
+            seat : { id: 'Sa', alpha: 8.460744722271127, beta: 0.7251213529780364, radius: 10.038313487331575 },      
+            waterbottle : { id: 'BidonRosu', alpha: 5.549944373409927, beta: 1.7457505434456517, radius: 9.999805933906167 },      
+            handlebars : { id: 'Ghidon', alpha: 5.218007193438249, beta: 1.042441018904849, radius: 19.999952560667452 },
+          }
+
+          constructor(props) {
+            super(props);   
+            // We bind our event to keep the proper "this" context.
+            this.moveCamera = this.moveCamera.bind(this)
+          }
+          /*
+          *  This function animates the movement of
+          *  the camera to our new region.
+          */          
+          moveCamera = (e) => {
+            TweenMax.to(this.camera, 1, {
+                radius: this.regions[e.detail].radius, 
+                alpha: this.regions[e.detail].alpha, 
+                beta: this.regions[e.detail].beta,
+                ease: Power2.easeOut,
+            })
+          }
+
+          componentDidMount() {
+            this.setEngine()
+            this.setScene()
+            this.setCamera()
+            this.loadModels().load()    
+            window.addEventListener('resize', this.onResizeWindow)
+            // We can add our custom event just like any other DOM event
+            window.addEventListener('move-camera', this.moveCamera)                    
+          }
+
+        }
+      </xmp>
+    </div>
+    <div class="post">        
+        <h2>Animations in Babylon</h2><br><br>
+        <p>
+          You'll notice we are using an additional library here in our move camera function. <a href="https://greensock.com/tweenmax">TweenMax is part of the GSAP JavaScript animation library </a> it is an exreamly common utility used in web animation. Babylon does include its own animation libraries but they are a bit more verbose and limited to animating the elements inside a Babylon scene. TweenMax is a bit more flexible as it can animate basically anything, so we can use one animation API to animate our 3D objects as well as DOM elements like our control accordions. 
+        </p><br><br>
+
+        <p>
+          While TweenMax is exreamly flexible and powerful 90% of the time you will never need more than the basic `to` method, which takes an object to animate, a time duration in seconds, and an object of properties to animate the pain object to. In our case we are animating the alpha, beta, and radius of our Babylon.js camera. 
+        </p><br><br>
+
+        <p>
+          This code is all it takes to wire up our first basic animation, now when you click on the contol labels you should automatically be taken to the area of our model we are going to be manipulating. Next We need to wire up our controls inside the acordion to be able to modify the colors of different sections of our model.
+        </p><br><br>                        
+    </div>
+    <!-- CODE FOR ADDING COLOR CHANGE EVENT -->
+    <!-- CODE FOR ADDING COLOR CHANGE EVENT -->
+    <div class="post">        
+        <p>
+          This code is basically the same thing we did before to fire off our own custom event from the ProductOptionControl component. Next we will add another listener to out scene3D file along with a hash to transform color values from text to the Color3 rgb class that Babylon use internally.
+        </p><br><br>                      
+        <h2>Working with materials</h2><br><br>
+        <p>
+          The color of a 3D object is defined by what is refereed to in the 3D world as a material. A material consist of much more than just color actually. It controls things like how the object reacts to light. Materials are how we create photo realistic metal sheens or transparent glass effects. 
+        </p><br><br>
+        <p>
+          In our example Babylon handles the material for us, actually it was already attached to our model when we imported it. We only need to access it as a property of our Mesh. We can uses Babylons "getMeshByID" method on the scene to select a particular mesh. This model has hundreds of meshes so rather than click through those in the JavaScript console looking for the right one, it is easiest to just go back it to Blender and right click on the part of the mesh we are looking for. Then you will see the object highlighted on the right in blenders object graph. The name here will also be the ID of the mesh. If you're using the provided 3D model you can just use the Id names in my example.
+        </p><br><br>                      
+    </div>
+    <!-- CODE FOR SELECTING MESH ID -->
+    <!-- CODE FOR SELECTING MESH ID -->
+    <div class="post">        
+        <p>
+          In the code above I am modifying the colors a bit when the mesh is loaded to match up with the options I'm making available to users. Notice that I am making a clone of the material then reassigning it before changing the color. This is an important step that if we miss will cause strange bugs down the road.
+        </p><br><br> 
+        <p>
+         In Babylon; and most 3D renderer's, it is possible and often preferred to share one instance of a material across many meshes. This is more efficient but comes at a cost in that we can not modify the color of one piece without modifying the color of all the other meshes who share that material. 
+        </p><br><br>                           
+        <p>
+         To get around this we simply duplicate the current material and apply a new instance to the items we wish to manipulate. This keeps all the material properties isolated to that one mesh. Now if we click through our controls we should have our camera animations and our color changes. Pretty cool right, and it isn't even that much code especially considering what you would have to do to do this in raw webGL. Next we will focus on putting some finishing touches on our scene to make it more refined. 
+        </p><br><br>                                                  
+    </div>
+
+    
     <script src="/build/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     

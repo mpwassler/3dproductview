@@ -9,8 +9,11 @@ import  {
   HemisphericLight,
   Mesh,
   Color3,
-  FxaaPostProcess,
-  Texture
+  Tools,
+  MeshBuilder,
+  Texture,
+  StandardMaterial,
+  Axis
 } from 'babylonjs'
 
 
@@ -84,8 +87,14 @@ class Scene3d extends Component {
   }
 
   setCamera = () => {
-     this.camera = new ArcRotateCamera("Camera", Math.PI * 2, Math.PI / 2, 20, new Vector3( 0, 5, -5 ), this.scene);
+     this.camera = new ArcRotateCamera("Camera", Math.PI * 2, Tools.ToRadians(80), 20, new Vector3( 0, 5, -5 ), this.scene);
      this.camera.attachControl(this.stage, true);
+     this.camera.lowerRadiusLimit = 9
+     this.camera.upperRadiusLimit = 20;
+     this.camera.lowerBetaLimit = this.camera.beta - Tools.ToRadians(80)
+     this.camera.upperBetaLimit = this.camera.beta + Tools.ToRadians(20);
+     this.camera.lowerAlphaLimit = this.camera.alpha - Tools.ToRadians(180)
+     this.camera.upperAlphaLimit = this.camera.alpha + Tools.ToRadians(180)
      
   }
 
@@ -100,17 +109,20 @@ class Scene3d extends Component {
       this.scene.getMeshByID('Ghidon').material = this.scene.getMeshByID('Ghidon').material.clone()
       this.scene.getMeshByID('BidonRosu').material = this.scene.getMeshByID('BidonRosu').material.clone()
       this.scene.getMeshByID('Furca').material = this.scene.getMeshByID('Furca').material.clone()
+      this.scene.getMeshByID('Cadru1').material.diffuseColor = this.scene.getMeshByID('Cadru1').material.clone()
 
       this.scene.getMeshByID('Sa').material.diffuseColor = this.colors['grey']
       this.scene.getMeshByID('Ghidon').material.diffuseColor = this.colors['grey']
       this.scene.getMeshByID('BidonRosu').material.diffuseColor = this.colors['grey']
       this.scene.getMeshByID('Furca').material.diffuseColor = this.colors['black']
+      this.scene.getMeshByID('Cadru1').material.diffuseColor = this.colors['white']
+      
       
       this.engine.runRenderLoop(() => { 
        // console.log(this.camera.alpha,this.camera.beta,this.camera.radius )
         this.scene.render() 
       })
-      let light = new HemisphericLight('light1', new Vector3(0,1,0), this.scene)
+      new HemisphericLight('light1', new Vector3(0,1,0), this.scene)
     }
     loadBikeModel.onError = function (task, message, exception) {
         console.log(message, exception);
@@ -118,11 +130,27 @@ class Scene3d extends Component {
     return loader
   }
 
+  loadLogo() {
+
+    let url = '/pxslogo.png'
+    var materialPlane = new StandardMaterial("logo", this.scene);
+    materialPlane.diffuseTexture = new Texture(url, this.scene);
+    materialPlane.diffuseTexture.hasAlpha = true
+    materialPlane.specularColor = new Color3(0, 0, 0);
+
+
+    let logo = MeshBuilder.CreatePlane('logo', {width: 470 / 20, height: 440 / 20}, this.scene, true)
+    logo.position = new Vector3(0, 0, -5);
+    logo.rotate(Axis.X, Math.PI / 2)
+    logo.material = materialPlane;
+  }
+
 
   componentDidMount() {
     this.setEngine()
     this.setScene()
     this.setCamera()
+    this.loadLogo()
     this.loadModels().load()    
     window.addEventListener('resize', this.onResizeWindow)
     window.addEventListener('move-camera', this.moveCamera)   

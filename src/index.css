@@ -8,6 +8,7 @@ body {
   width   : 100%;
   height  : 100vh;
   touch-action: none;
+  padding-right: 20%;
 }
 
 .controls {
@@ -28,6 +29,9 @@ body {
     font-size: 1em;
     padding: 10px 0 10px 0;
     background: #000;
+    display: block;
+    width: 100%;
+    border: 1px solid #222; ;
     text-transform: uppercase;
   }
   .productoption_body {
@@ -37,7 +41,11 @@ body {
   .productoption_btn {
     display: block;
     color: inherit;
+    text-align: center;
+    margin: 0 auto;
+    border: none;
+    background: transparent;
     text-decoration: none;
     padding: 10px 0 10px 0; 
-    font-size: 0.75em;
+    font-size: 1em;
   }

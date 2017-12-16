@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import Scene3d from './Components/Scene3d'
 import Controls from './Components/Controls'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      optionNames: [ 'frame', 'seat', 'waterbottle', 'handlebars' ],   
+      optionValues: [
+        [ 'white', 'red', 'blue', 'green' ],
+        [ 'grey', 'white', 'black' ],
+        [ 'grey', 'white', 'black' ],
+        [ 'grey', 'white', 'black' ]
+      ]
+    }
+  }
+
   render() {
     return (
       <div className="App">                
         <Scene3d />                
-        <Controls 
-        options={[ 'frame', 'seat', 'waterbottle', 'handlebars' ]} 
-        optionValues={[
-        	[ 'red', 'blue', 'green', 'yellow' ],
-        	[ 'grey', 'white', 'black' ],
-        	[ 'grey', 'white', 'black' ],
-        	[ 'grey', 'white', 'black' ]
-        ]}
-        />        
+        <Controls options={this.state.optionNames} optionValues={this.state.optionValues} />        
       </div>
     )
   }

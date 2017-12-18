@@ -124,7 +124,7 @@ class Scene3d extends Component {
     */ 
     let loader = new AssetsManager(this.scene) 
     // Arguments: "ID", "Root URL", "URL Prefix", "Filename"    
-    let loadBikeModel = loader.addMeshTask("bike", "", "/", "bike.babylon")
+    let loadBikeModel = loader.addMeshTask("bike", "", "", "bike.json")
     /*
     *  Loader is given a callback to run when the model has loaded
     *  the variable t is our imported scene. You can use
@@ -161,7 +161,7 @@ class Scene3d extends Component {
 
   loadLogo() {
 
-    let url = '/pxslogo.png'
+    let url = 'pxslogo.png'
     var materialPlane = new StandardMaterial("logo", this.scene);
     materialPlane.diffuseTexture = new Texture(url, this.scene);
     materialPlane.diffuseTexture.hasAlpha = true

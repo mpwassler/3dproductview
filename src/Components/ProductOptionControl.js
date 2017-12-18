@@ -95,21 +95,21 @@ class ProductOptionControl extends Component {
   render() {
     return (       
     	<div className="productoption" >
-          /*
+          {/*
           *  The accordion header, this is always visible. We attach a click
           *  event handler to it to handle opening and closing of 
           *  the accordion body
-          */
+          */}
 	        <button onClick={this.toggleAccordion} className="productoption_header" >
 	        	{this.props.optionName}
 	        </button> 
-          /*
+          {/*
           *  We capture another reference to a DOM element here. 
           *  This is to read and modify the height so we 
           *  can make our accordion
-          */       
+          */}      
 	        <div className="productoption_body" ref={ el => this.optionBody = el} >
-             // Map over all the possible options and list them out
+             {/* Map over all the possible options and list them out */}
 	        	{this.props.optionValues.map( value => {
 	        		return <button key={value} onClick={(e) => {
 	        			e.preventDefault()

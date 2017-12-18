@@ -11,40 +11,41 @@
     <link rel="stylesheet" href=" build/static/css/main.d48409c8.css">
     <script src="build/static/js/main.e6522ee1.js"></script>
     <style type="text/css" media="screen">
-    #editor { 
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
+    
 </style>
   
-  <style>
-    .post {
-      max-width: 990px; 
-      margin: 0 auto; 
-      padding:100px 5% 100px 5% ;
-    }
-    .post p {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-    .post ul {
-      list-style: circle;
-      padding-left: 40px;
-    }
-    .post ul li {
-      font-size: 1.5em;
-      font-weight: normal;
-      padding-top: 10px;
-      padding-bottom: 10px;
-
-    }
-  </style>
   </head>
   <body>
-    <div class="post">
+    <style>
+      #editor { 
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+      .post-full {
+        max-width: 990px; 
+        margin: 0 auto; 
+        padding:100px 5% 100px 5% ;
+      }
+      .post-full p {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      .post-full ul {
+        list-style: circle;
+        padding-left: 40px;
+      }
+      .post-full ul li {
+        font-size: 1.5em;
+        font-weight: normal;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+      }
+    </style>
+    <div class="post-full">
       <h1>Enhancing E commerce experiences with 3D product configuators</h1>
       <p>
         Product configurators have always been popular with high ticket items like luxury cars. <a target="_blank" href="https://www.bmwusa.com/byo.html#!/">Companies like BMW have had "build your own" sections</a> featured prominently in their navigation for years. When people are paying a lot of money they expect a hight degree of control over what they're getting. Even as far back as 2012 a configurator was considered by users as one of<a target="_blank" href="https://www.statista.com/statistics/261138/buying-cars-online-website-features-consumers-found-important-worldwide/"> the most imortant features of a car company website.</a> 
@@ -68,7 +69,7 @@
     </div>
  
     <div id="root" style="position:relative;"></div>
-    <div class="post">
+    <div class="post-full">
 
       
       <p>
@@ -103,7 +104,7 @@
           let sphere = new BABYLON.Sphere('sphere1', scene, 10, 5)
         </xmp> 
     </div>
-    <div class="post">
+    <div class="post-full">
       <p>
         You can find documentation for all of Babylons classes on their <a href="http://doc.babylonjs.com/classes/3.1" target="_blank">docs page.</a> We will explore most of the more common classes as we go through this tutorial.
       </p>
@@ -133,7 +134,7 @@
         export default Greeting
       </xmp>      
     </div>
-    <div class="post">
+    <div class="post-full">
       <p>
         This class will export a component that can be used like so.
       </p>
@@ -156,7 +157,7 @@
         export default App
       </xmp>      
     </div>
-    <div class="post">
+    <div class="post-full">
       <p>
         The first thing you'll probably notice is the very odd chunk of HTML in a JavaScript method. This is called JSX and it is a special file format created along with React to make it easier to describe your UI in JavaScript. When building React applications you have a build script that parses these JSX tags into JavaScript function calls that actually render the UI in browser.
       </p>
@@ -194,7 +195,7 @@
         export default Greeting
       </xmp>      
     </div>
-    <div class="post">
+    <div class="post-full">
       <p>
         The preceding code will update our name value and re render the h1 tag any time the input is typed into. Management of state is really the core of how React works. Knowing this is knowing most of React. There are a few other necessary things to learn about it but we will be covering those as we go through the project.
       </p>
@@ -202,7 +203,7 @@
         You might be wondering if we really need to be using React for this demo, and the answer is probably no. Our UI is probably simple enough that we could get by without it. But if we wanted to expand the scope of our UI in the future react would help us keep a well organized and east to maintain project. Building a tutorial where React is really necessary can be tough because it really shows its benefits in large projects that would be pretty difficult to do a full text write up on. Especially one captivating enough to keep peoples attention through the whole thing. So I think this is a good project to introduce the concepts with. 
       </p>
     </div>
-    <div class="post">  
+    <div class="post-full">  
       <h2>Starting our product configurator</h2>
       <p>
         To start off we will need to download the create-react-app cli 
@@ -326,7 +327,7 @@
       export default Scene3d
       </xmp>      
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>The Render Function</h2>
         <p>
           The above component will hold all our 3D content which is loaded in an HTML5 canvas tag. The render function will simply return our canvas tag. The "rel" attribute alows us to pass a function that recives the DOM element which we can use to save as a property on our component class. This lets us bypass the need to use something like Jquery to select the element. Then we can access this as "this.stage" in our class methods.
@@ -342,7 +343,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         
         <p>
          This reference is what we will use to pass the canvas element to Babylon.js. This happens in the "setEngine" method. The engine class takes three arguments. The canvas element - in our case "this.stage", a boolean that says if we want to use webGL vs the 2D canvas API, and another boolean that says if we want anti-aliasing - which makes the edges of our model look nicer but lowers performance a bit. In our case we want both booleans to be set to true.
@@ -362,7 +363,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>Creating our 3D scene</h2>
         <p>
          After the engine the next piece we need for any 3D scene will be the actual Babylon scene object. This object is a manager for all the other objects in our scene. This pattern is commonly refereed to as a scene graph. It hold 3D object classes much in the same way the DOM object holds the HTML elements of a web page. If we want an object to appear in our 3D scene we add it to the scene object.
@@ -381,7 +382,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>Adding a camera </h2>
         <p>
           The next important step our scene needs to render is a camera. In Babylon and most 3D renderer s we have to add a camera before anything will show up in our scene. The camera acts at the view port the user looks through. The camera takes the following arguments: an id for selecting it in the scene if we need to, the alpha, delta, radius, a point to look at, and the scene to add the camera to. Babylon.js has quite a few built in camera types, the one we are using in this example is the Arc Rotate Camera. It is a special camera designed for rotating around a model. It is an excellent camera type to use for things like product viewers. The camera is essentially fixed to a sphere around the point it is set to look at.
@@ -404,7 +405,7 @@
          }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>Putting it all together</h2>
         <p>
           Now that we have all the basic elements of a scene its time to put them all together and make something happen. We will add the following code in a react specific function called "componentDidMount". This method is <a target="_blank" href="https://reactjs.org/docs/react-component.html#the-component-lifecycle">part of Reacts built in life cycle methods</a> and is called whenever a component is fully loaded into the DOM. We use this specific method because that this point we know our canvas tag is loaded and ready to be used. In this method will will make the calls to all our other set up methods in the order they are needed so Engine > Scene > Camera. 
@@ -421,7 +422,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <p>
           After this our basic Babylon scene component is ready to go so we can go to the parent App component that create-react-app provided for us and load it.
         </p>      
@@ -446,7 +447,7 @@
         export default App
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>Loading our Model</h2>
         <p>
           If we come back and check out browser now you'll notice we have... nothing. Kinda disappointing I know, but we actually do have a working 3d scene here; we just haven't started it yet. We have to load our model first. Lets add a loadModels function that will be responsible for fetching our model.
@@ -491,7 +492,7 @@
         }
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           Then we can call the loader in our componentDidMount method.
         </p>      
@@ -511,7 +512,7 @@
         }
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           Now if you refresh your browser you should see our bike model right in the middle of your screen. You'll also notice that if you click and drag around with your mouse the scene already has a nice level of interactivity built in. This is one of the benefits that Babylon.js's ArcRotateCamera gives us. This is a nice advantage Babylon has over other 3D Libraries. The built in controls already contain some nice smooth physics effects that would be a lot of work to implement ourselves. 
         </p> 
@@ -548,7 +549,7 @@
         export default Controls
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           This is as complex as this component will need to get. It takes in a list of props, maps over those props, and returns a component for each one. Mapping arrays is a common operation in many programing languages. A map function takes an array and calls a function on every element in the array, creating a new array from the returned result of each function call. In JavaScript map is a method of the built in array object. Because JSX is compiled to JavaScript function calls in React we can use JSX directly as if it where JavaScript, which is why we can return it directly from our map function. The end result is an array of our elements to render to the screen.
         </p>         
@@ -641,7 +642,7 @@
 
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           This gives us our basic structure now we need to load these components in app.js and pass in the options we want. We will set the options as state on the app component. We have one array to hold the option names and another multidimensional array to list out the possible options that can be selected.
         </p>                 
@@ -684,7 +685,7 @@
 
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           We have to pass these options down through our controls component. In Controls.js we will pass each configuration option to a ProductOptionControl component as props inside our map function. You will notice we are also using a special prop called key, this is just a unique identifier that helps React identify which component is which for updates. All you need to know about this is that it has to be unique to each item and is generally added any time you create a list of the same component in a loop.
         </p>                 
@@ -707,7 +708,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
       <h2>Styling our layout</h2>
       <p>
         Since this is not a CSS tutorial I am not going to go into detail on the styling of the layout. The CSS is very simple and I am including the contents of index.css below. This should be all you need to get the layout looking the way it does in the final example.
@@ -770,7 +771,7 @@
       </xmp>
     </div>
 
-    <div class="post">        
+    <div class="post-full">        
         <p>
           You should now see what makes up the bulk of our layout. We have our 3D scene with an overlay of an accordion of controls on the right hand side. From here all we have to is to actually link the controls up and make them functional.
         </p>
@@ -818,7 +819,7 @@
         }
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <p>
           Next we need to listen for that event in our Scene3d component. When a "move-camera" event is fired we are going to animate our 3D camera in our scene to focus in on the section of the model affected by those controls.   
         </p>
@@ -877,7 +878,7 @@
         }
       </xmp>
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <h2>Animations in Babylon</h2>
         <p>
           You'll notice we are using an additional library here in our move camera function. <a href="https://greensock.com/tweenmax">TweenMax is part of the GSAP JavaScript animation library </a>. It is an extremely common utility used in web animation. Babylon does include its own animation libraries but they are a bit more verbose and limited to animating the elements inside a Babylon scene. TweenMax is a bit more flexible as it can animate basically anything, so we can use one animation API to animate our 3D objects as well as DOM elements like our control accordions. 
@@ -926,7 +927,7 @@
       </xmp>
     </div>
     <!-- CODE FOR ADDING COLOR CHANGE EVENT -->
-    <div class="post">        
+    <div class="post-full">        
         <p>
           This code is basically the same thing we did before to fire off our own custom event from the ProductOptionControl component. Next we will add another listener to out scene3D file along with a hash to transform color values from text to the Color3 rgb class that Babylon use internally.
         </p>     
@@ -974,7 +975,7 @@
         }
       </xmp>
     </div>
-    <div class="post">
+    <div class="post-full">
         <h2>Working with materials</h2>
         <p>
           The color of a 3D object is defined by what is refereed to in the 3D world as a material. A material consist of much more than just color actually. It controls things like how the object reacts to light. Materials are how we create photo realistic metal sheens or transparent glass effects. 
@@ -1031,7 +1032,7 @@
       </xmp>
     </div>
     <!-- CODE FOR SELECTING MESH ID -->
-    <div class="post">        
+    <div class="post-full">        
         <p>
           In the code above I am modifying the colors a bit when the mesh is loaded to match up with the options I'm making available to users. Notice that I am making a clone of the material then reassigning it before changing the color. This is an important step that if we miss will cause strange bugs down the road.
         </p> 
@@ -1042,7 +1043,7 @@
          To get around this we simply duplicate the current material and apply a new instance to the items we wish to manipulate. This keeps all the material properties isolated to that one mesh. Now if we click through our controls we should have our camera animations and our color changes. Pretty cool right, and it isn't even that much code especially considering what you would have to do to do this in raw webGL. Next we will focus on putting some finishing touches on our scene to make it more refined. 
         </p>                                                  
     </div>
-    <div class="post">        
+    <div class="post-full">        
         <h2>Finishing Touches</h2>
         <p>
           We need to set some sensible limits on how much the user can rotate around our model. This is because of our animations. If we let the user rotate a hundred times around the model then when it animates the camera back to one of our fixed positions it will spin a hundred times back like some sort of awkward wind up toy. You could also fix this by normalizing the rotations but it is easier to just fix everything to one rotation.
@@ -1072,7 +1073,7 @@
       </xmp>
     </div>
     <!-- CODE FOR LIMITING ROTATION -->
-    <div class="post">        
+    <div class="post-full">        
         <p>
           Next we want to make sure our interface behaves just as nicely for people who are unable to use a mouse as it does for those who are using one. We already have a decent start at this using Babylon as its built in camera controls can be used with the arrow keys by default as well. You can also hold option + up or down arrow to zoom in and out. Because we used native HTML buttons for our controls the can be used nicely by tabbing through them and hitting the enter key. However, our accordions are making things kind of awkward because it will tab through the hidden options of the closed accordions. This is not going to be a good experience for those users as they cannot see what the options are. We want the internal accordion buttons to only be tab-able if the accordion is open. We can do this by setting the CSS visibility on the accordion body. Once it is closed we need to make sure the visibility is set to hidden and then just before it opens again we set our visibility back to visible so we can still see the animation.
         </p>      
@@ -1135,7 +1136,7 @@
     </div>
     
     <!-- CODE FOR SETTING VISIBILITY IN ACCORDION -->
-    <div class="post">        
+    <div class="post-full">        
         <p>
           The last small finishing touch I added was put our company logo in as the floor of the scene. Im not going to go into to much detail on this since this tutorial is long enough as as is. However, I will add detailed comments to the code to do this so you can see a little bit more about how to work with images and textures in Babylon.
         </p>  

@@ -85,9 +85,7 @@ class Scene3d extends Component {
     this.stage.style.width = '200%'
     this.stage.style.height = '200%'
     this.engine = new Engine(
-      this.stage,
-      true,
-      true
+      this.stage
     )    
     this.stage.style.width = '100%'
     this.stage.style.height = '100%'

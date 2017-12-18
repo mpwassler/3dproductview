@@ -14,7 +14,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-public/post.html
+
 public/build/
 
 npm-debug.log*

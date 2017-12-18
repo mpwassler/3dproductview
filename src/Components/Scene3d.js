@@ -122,7 +122,7 @@ class Scene3d extends Component {
     */ 
     let loader = new AssetsManager(this.scene) 
     // Arguments: "ID", "Root URL", "URL Prefix", "Filename"    
-    let loadBikeModel = loader.addMeshTask("bike", "", "", "bike.json")
+    let loadBikeModel = loader.addMeshTask("bike", "", "", "bike.babylon")
     /*
     *  Loader is given a callback to run when the model has loaded
     *  the variable t is our imported scene. You can use
